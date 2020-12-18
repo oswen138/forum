@@ -32,7 +32,17 @@ class RepliesController < ApplicationController
     @reply = @discussion.replies.find(params[:id])
   end
 
-  
+  def update
+    @reply = @discussion.replies.find(params[:id])
+    respond_to do |format|
+      if @reply.update(reply_params)
+        format.html { redirect_to discussion_path(@discussion), notice: 'Reply successfully updated' }
+      else
+        format.html { render :edit }
+        format.json { render json: @reply.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   private
 
