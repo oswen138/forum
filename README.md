@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * ...
 
-12/17/20
+12/17/20 - 12/18/20
 1PM - reference on how to build a discussion forum
 https://web-crunch.com/posts/lets-build-with-ruby-on-rails-discussion-forum
 
@@ -60,3 +60,14 @@ Logged in Users can
 -Have a profile
 -Search the forum
 -Comments/contribute to the forum discussions
+
+
+12/18/20
+8AM - finish tutorial parts 5 to 9
+12PM - Lunch
+1PM - research tutorials on how to build a messaging system with ruby on rails
+2PM - attempt on different file to understand how each part was implemented
+found one mixed with a trade app
+Reference:
+https://web-crunch.com/posts/lets-build-with-ruby-on-rails-trade-app-in-app-messaging
+3PM - implement code onto current application

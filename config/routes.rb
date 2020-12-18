@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     resources :replies
   end
 
+  resources :conversations do
+    resources :messages
+  end
+
   root 'discussions#index'
 
   devise_for :users, controllers: { registrations: 'registrations' }
