@@ -11,7 +11,7 @@ class ChannelsController < ApplicationController
   # GET /channels/1
   # GET /channels/1.json
   def show
-    @discussions = Discussion.where('channel_id = ?', @channel_id)
+    @discussions = Discussion.where('channel_id = ?', @channel.id)
     @channels = Channel.all
   end
 
@@ -26,12 +26,12 @@ class ChannelsController < ApplicationController
 
   # POST /channels
   # POST /channels.json
-  def create
+   def create
     @channel = Channel.new(channel_params)
 
     respond_to do |format|
       if @channel.save
-        format.html { redirect_to @channels_path, notice: 'Channel was successfully created.' }
+        format.html { redirect_to channels_path, notice: 'Channel was successfully created.' }
         format.json { render :show, status: :created, location: @channel }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class ChannelsController < ApplicationController
   def update
     respond_to do |format|
       if @channel.update(channel_params)
-        format.html { redirect_to @channels_path, notice: 'Channel was successfully updated.' }
+        format.html { redirect_to channels_path, notice: 'Channel was successfully updated.' }
         format.json { render :show, status: :ok, location: @channel }
       else
         format.html { render :edit }
@@ -70,7 +70,7 @@ class ChannelsController < ApplicationController
       @channel = Channel.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+    # Never trust parameters from the scary internet, only allow the white list through.
     def channel_params
       params.require(:channel).permit(:channel)
     end

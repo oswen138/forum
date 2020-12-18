@@ -4,15 +4,15 @@ class RepliesController < ApplicationController
   before_action :set_discussion, only: [:create, :edit, :show, :update, :destroy]
 
   def create
-    @reply = @discussion.replies.create(params[:reply]).permit(:reply, :discussion_id)
+    @reply = @discussion.replies.create(params[:reply].permit(:reply, :discussion_id))
     @reply.user_id = current_user.id
 
     respond_to do |format|
       if @reply.save
         format.html { redirect_to discussion_path(@discussion) }
-        format.js #render create.js.erb
+        format.js # renders create.js.erb
       else
-        format.html { redirect_to discussion_path(@discussion), notice: 'Reply did not save. Try again!' }
+        format.html { redirect_to discussion_path(@discussion), notice: "Reply did not save. Please try again."}
         format.js
       end
     end
@@ -20,6 +20,7 @@ class RepliesController < ApplicationController
 
   def new
   end
+
 
   def destroy
     @reply = @discussion.replies.find(params[:id])
@@ -34,14 +35,17 @@ class RepliesController < ApplicationController
 
   def update
     @reply = @discussion.replies.find(params[:id])
-    respond_to do |format|
+     respond_to do |format|
       if @reply.update(reply_params)
-        format.html { redirect_to discussion_path(@discussion), notice: 'Reply successfully updated' }
+        format.html { redirect_to discussion_path(@discussion), notice: 'Reply was successfully updated.' }
       else
         format.html { render :edit }
         format.json { render json: @reply.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def show
   end
 
   private
@@ -57,5 +61,4 @@ class RepliesController < ApplicationController
   def reply_params
     params.require(:reply).permit(:reply)
   end
-
 end
