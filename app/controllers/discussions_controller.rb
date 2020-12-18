@@ -12,12 +12,12 @@ class DiscussionsController < ApplicationController
   # GET /discussions/1
   # GET /discussions/1.json
   def show
-    @discussions.Discussion.all.order('created_at desc')
+    @discussions = Discussion.all.order('created_at desc')
   end
 
   # GET /discussions/new
   def new
-    @discussion = current_user.discussions.Build
+    @discussion = current_user.discussions.build
   end
 
   # GET /discussions/1/edit
@@ -72,9 +72,10 @@ class DiscussionsController < ApplicationController
 
     def find_channels
       @channels = Channel.all.order('created_at desc')
+    end
 
-    # Only allow a list of trusted parameters through.
+    # Never trust parameters from the scary internet, only allow the white list through.
     def discussion_params
-      params.require(:discussion).permit(:title, :content)
+      params.require(:discussion).permit(:title, :content, :channel_id)
     end
 end
