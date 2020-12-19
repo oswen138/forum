@@ -27,8 +27,7 @@ class MessagesController < ApplicationController
   def new
     @message = @conversation.messages.new
   end
-
-
+ 
 
   private
 
