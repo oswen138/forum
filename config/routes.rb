@@ -9,8 +9,10 @@ Rails.application.routes.draw do
     resources :messages
   end
 
-  root 'discussions#index'
-
   devise_for :users, controllers: { registrations: 'registrations' }
+
+  root 'discussions#index', as: :subdomain_root
+  get 'messages', to: 'messages#index', as: :messages_root
+  get 'conversations', to: 'conversations#index', as: :conversations_root
   
 end

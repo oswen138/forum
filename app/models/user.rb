@@ -9,3 +9,7 @@ class User < ApplicationRecord
   has_many :channels, through: :discussions
   has_many :conversations, through: :messages
 end
+
+
+
+akefljakefjkl
