@@ -9,6 +9,18 @@
 
   <br/>
 
+  <div class="column is-8 is-offset--0">
+  <h3 class="title is-5 has-text-grey-light">Conversations</h3>
+
+  <ul class="list">
+    <% @messages.each do |m| %>
+    <li><%= link_to m.messages, m %></li>
+    <% end %>
+  </ul>
+
+
+  <br/>
+
   <% if has_role?(:admin) %>
   <%= link_to 'New Channel', new_channel_path, class:'button is-info' %>
   <% end %>

@@ -1,11 +1,3 @@
-<div class="card">
-  <div class="card-image">
-    <figure class="image is-square">
-      <%= link_to image_tag(discussion.images.first.variant(resize: "640x480>")), discussion %>
-    </figure>
-  </div>
-
-
 <div class="column is-8">
   <h3 class="title is-5 has-text-grey-light">Latest Discussions</h3>
   <div class="discussions">
@@ -30,6 +22,15 @@
             </p>
           </div>
         </div>
+
+        <div class="card">
+          <div class="card-image">
+             <figure class="image is-square">
+                <%= link_to image_tag(discussion.images.first.variant(resize: "640x480>")), discussion %>
+          </figure>
+        </div>
+
+        </hr>
 
         <% if discussion_author(discussion) || has_role?(:admin) %>
         <div class="column has-text-right">
