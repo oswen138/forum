@@ -7,6 +7,7 @@ class User < ApplicationRecord
   
   has_many :discussions, dependent: :destroy
   has_many :channels, through: :discussions
+  has_many_attached :images, dependent: :destroy
 end
 
 
