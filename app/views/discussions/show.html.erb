@@ -33,6 +33,15 @@
 
   </div>
 
+  <% if user_signed_in? && current_user.id != @discussion.user_id %>
+    <%= link_to "Message #{@discussion.user.name}", conversations_path(sender_id: current_user.id, recipient_id: @discussion.user.id), method: 'post', class:"button is-link" %>
+  <% elsif user_signed_in? && current_user.id == @discussion.user_id  %>
+    <%= link_to "Conversations", conversations_path %>
+  <% else %>
+
+  <%= link_to "Sign up to message #{@discussion.user.name}", new_user_registration_path %>
+  <% end %>
+
   <%= render 'sidebar' %>
 
 </div>

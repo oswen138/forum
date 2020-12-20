@@ -15,13 +15,6 @@ class ConversationsController < ApplicationController
     redirect_to conversation_messages_path(@conversation)
   end
 
-  def match_root_route(options)
-    name = has_named_route?(name_for_action(:root, nil)) ? nil : :root
-    args = ["/", { as: name, via: :get }.merge!(options)]
-  
-    match(*args)
-  end
-
   private
     def conversation_params
       params.permit(:sender_id, :recipient_id)
