@@ -62,5 +62,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'sidekiq', '~> 6.1', '>= 6.1.2'
 gem 'kramdown', '~> 2.3'
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 
 
