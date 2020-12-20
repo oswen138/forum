@@ -2,7 +2,6 @@ class Reply < ApplicationRecord
   belongs_to :discussion
   belongs_to :user
   validates :reply, presence: true
-  has_many_attached :images, dependent: :destroy
 
   extend FriendlyId
   friendly_id :reply, use: [:slugged, :finders]

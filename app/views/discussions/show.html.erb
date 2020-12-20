@@ -21,6 +21,17 @@
       <%= render @discussion.replies %>
     </div>
 
+    <% if @discussion.images.attached? %>
+      <div class="columns is-multiline">
+        <% @discussion.images.each do |image| %>
+          <div class="column is-one-third">
+            <%= image_tag image.variant(resize: "800x600>") %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
     <hr />
 
     <h3 class="subtitle is-3 has-text-grey">Leave a reply</h3>
@@ -30,7 +41,6 @@
     <p>To reply you need to <%= link_to 'login', new_user_session_path %>. Don't have an account?
       <%= link_to 'Sign up', new_user_registration_path %> for one.</p>
     <% end %>
-
   </div>
 
   <%= render 'sidebar' %>
