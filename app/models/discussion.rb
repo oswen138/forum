@@ -2,7 +2,6 @@ class Discussion < ApplicationRecord
   belongs_to :channel
   belongs_to :user
   has_many :replies, dependent: :destroy
-  has_many_attached :images, dependent: :destroy
 
   validates :title, :content, presence: true
   resourcify
