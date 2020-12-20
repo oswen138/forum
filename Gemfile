@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+gem 'mini_magick', '~> 4.11'
 
 gem "bulma-rails", "~> 0.9.1"
 gem 'simple_form', '~> 5.0', '>= 5.0.3'
@@ -58,3 +59,8 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'sidekiq', '~> 6.1', '>= 6.1.2'
+gem 'kramdown', '~> 2.3'
+
+
