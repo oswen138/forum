@@ -15,18 +15,6 @@
     </div>
     <div class="content"><%= markdown(@discussion.content) %></div>
 
-
-    <% if @discussion.images.attached? %>
-    <div class="columns is-multiline">
-      <% @discussion.images.each do |image| %>
-        <div class="column is-one-third">
-          <%= image_tag image.variant(resize: "800x600>") %>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-</div>
-
     <h2 class="subtitle is-5 has-text-grey"><%= @discussion.replies.count %> Replies</h2>
 
     <div id="discussion-replies">

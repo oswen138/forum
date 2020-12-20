@@ -23,15 +23,6 @@
           </div>
         </div>
 
-        <div class="card">
-          <div class="card-image">
-             <figure class="image is-square">
-                <%= link_to image_tag(discussion.images.first.variant(resize: "640x480>")), discussion %>
-          </figure>
-        </div>
-
-        </hr>
-
         <% if discussion_author(discussion) || has_role?(:admin) %>
         <div class="column has-text-right">
           <%= link_to 'Edit', edit_discussion_path(discussion), class:'button' %>
