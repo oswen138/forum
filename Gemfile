@@ -64,5 +64,5 @@ gem 'sidekiq', '~> 6.1', '>= 6.1.2'
 gem 'kramdown', '~> 2.3'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
-
+gem 'threejs-rails', git: 'git://github.com/marvindanig/threejs-rails.git'
 
