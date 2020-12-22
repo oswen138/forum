@@ -79,7 +79,7 @@ class DiscussionsController < ApplicationController
     end
 
     def conversation_exist?
-      Private::Conversation.between_users(current_user.id, @post.user.id).present?
+      Private::Conversation.between_users(current_user.id, @discussion.user.id).present?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
