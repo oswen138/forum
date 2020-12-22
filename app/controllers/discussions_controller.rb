@@ -74,8 +74,16 @@ class DiscussionsController < ApplicationController
       @channels = Channel.all.order('created_at desc')
     end
 
+    def find_conversations
+      @conversations = Conversation.all.order('created_at desc')
+    end
+
+    def set_conversations
+      @conversations = Conversation.find(params[:id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def discussion_params
-      params.require(:discussion).permit(:title, :content, :channel_id, :user_id, images: [])
+      params.require(:discussion).permit(:title, :content, :channel_id, :user_id, :conversation_id,  images: [],)
     end
 end

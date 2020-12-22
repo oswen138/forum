@@ -20,7 +20,7 @@ class MessagesController < ApplicationController
   def create
     @message = @conversation.messages.new(message_params)
     if @message.save
-      redirect_to conversation_messages_path(@conversation)
+      redirect_to discussion_conversation_messages_path(@conversation)
     end
   end
 
@@ -31,7 +31,7 @@ class MessagesController < ApplicationController
 
   private
     def message_params
-      params.require(:message).permit(:body, :user_id)
+      params.require(:message).permit(:body, :user_id, :conversation_id, :discussion_id)
     end
 
     def find_conversation

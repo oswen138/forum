@@ -12,12 +12,10 @@ class ConversationsController < ApplicationController
     else
       @conversation = Conversation.create!(conversation_params)
     end
-    redirect_to conversation_messages_path(@conversation)
+    redirect_to discussion_conversation_messages_path(@conversation)
   end
 
   private
     def conversation_params
-      params.permit(:sender_id, :recipient_id)
+      params.permit(:sender_id, :recipient_id, :conversation_id, :discussion_id)
     end
-
-enddgsergsegrrtrtyu

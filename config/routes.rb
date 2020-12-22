@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  root 'home#index'
+  root 'discussions#index'
   devise_for :users, controllers: { registrations: 'registrations' }
 
   resources :channels

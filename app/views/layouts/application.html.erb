@@ -42,6 +42,11 @@
             <div class="field is-grouped">
               <%= link_to 'New Discussion', new_discussion_path, class:"button is-info" %>
             </div>
+
+            <div class="field is-grouped">
+              <%= link_to 'Conversations', discussion_conversation_messages_path, class:"button is-info" %>
+            </div>
+
           </div>
           <div class="navbar-item has-dropdown is-hoverable">
             <%= link_to 'Account', edit_user_registration_path, class: "navbar-link" %>
@@ -56,6 +61,10 @@
 
             <p class="control">
               <%= link_to 'New Discussion', new_discussion_path, class:"button is-info" %>
+            </p>
+
+            <p class="control">
+              <%= link_to 'Conversation', discussion_conversation_messages_path, class:"button is-info" %>
             </p>
 
             <p class="control">
