@@ -14,8 +14,23 @@
  *= require_self
  */
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
+
+ // Bootstrap
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+// Variables
+@import "base/variables";
+
+// Default styles
+@import "base/default";
+
+
+// Partials - main css files
+@import "partials/*";
+@import "partials/layout/*";
+
+
  @import "bulma";
  @import "functions";
 
