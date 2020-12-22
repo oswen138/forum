@@ -14,6 +14,9 @@ class DiscussionsController < ApplicationController
   # GET /discussions/1.json
   def show
     @discussions = Discussion.all.order('created_at desc')
+    if user_signed_in?
+      @message_has_been_sent = conversation_exist?
+    end
   end
 
   # GET /discussions/new
@@ -75,12 +78,8 @@ class DiscussionsController < ApplicationController
       @channels = Channel.all.order('created_at desc')
     end
 
-    def find_conversations
-      @conversations = Conversation.all.order('created_at desc')
-    end
-
-    def set_conversations
-      @conversations = Conversation.find(params[:id])
+    def conversation_exist?
+      Private::Conversation.between_users(current_user.id, @post.user.id).present?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

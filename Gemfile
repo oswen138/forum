@@ -10,6 +10,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
@@ -49,6 +50,12 @@ group :development, :test do
   gem 'pry'
   gem 'guard', '~> 2.16', '>= 2.16.2'
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
+  gem 'factory_girl_rails'
+  gem 'rails-controller-testing'
+  gem 'headless'
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -62,7 +69,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'sidekiq', '~> 6.1', '>= 6.1.2'
 gem 'kramdown', '~> 2.3'
-gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'threejs-rails', git: 'git://github.com/marvindanig/threejs-rails.git'
 gem 'will_paginate', '~> 3.1.0'
