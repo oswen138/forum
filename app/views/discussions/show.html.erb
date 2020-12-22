@@ -19,6 +19,7 @@
 
     <div id="discussion-replies">
       <%= render @discussion.replies %>
+      <%= will_paginate @discussion %>
     </div>
 
     <hr />

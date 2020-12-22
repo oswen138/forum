@@ -7,6 +7,7 @@ class DiscussionsController < ApplicationController
   # GET /discussions.json
   def index
     @discussions = Discussion.all.order('created_at desc')
+    @discussions = Discussion.paginate(page: params[:page])
   end
 
   # GET /discussions/1
