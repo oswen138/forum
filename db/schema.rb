@@ -44,13 +44,6 @@ ActiveRecord::Schema.define(version: 2020_12_22_051630) do
     t.string "slug"
   end
 
-  create_table "conversations", force: :cascade do |t|
-    t.integer "sender_id"
-    t.integer "recipient_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "discussions", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -72,15 +65,6 @@ ActiveRecord::Schema.define(version: 2020_12_22_051630) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
-  create_table "messages", force: :cascade do |t|
-    t.text "body"
-    t.bigint "conversation_id"
-    t.bigint "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
-  end
 
   create_table "private_conversations", force: :cascade do |t|
     t.integer "recipient_id"

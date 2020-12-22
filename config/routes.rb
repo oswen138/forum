@@ -7,9 +7,14 @@ Rails.application.routes.draw do
   resources :discussions do
     resources :replies
 
-  resources :conversations do
-    resources :messages
+  namespace :private do 
+    resources :conversations, only: [:create] do
+      member do
+        post :close
+      end
     end
+    resources :messages, only: [:index, :create]
   end
+  
 end
 

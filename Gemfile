@@ -50,7 +50,7 @@ group :development, :test do
   gem 'pry'
   gem 'guard', '~> 2.16', '>= 2.16.2'
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
-  gem 'factory_girl_rails'
+  gem 'factory_bot'
   gem 'rails-controller-testing'
   gem 'headless'
   gem 'capybara'
