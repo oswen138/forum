@@ -14,6 +14,7 @@
       </div>
     </div>
     <div class="content"><%= markdown(@discussion.content) %></div>
+    
 
     <h2 class="subtitle is-5 has-text-grey"><%= @discussion.replies.count %> Replies</h2>
 
@@ -21,7 +22,7 @@
       <%= render @discussion.replies %>
     </div>
 
-    <div id="discussion-replies">
+    <div id="message">
       <%= render contact_user_partial_path %>
     </div>
   
