@@ -56,7 +56,6 @@
       </div>
     </div>
 
-
       <div id="navbar" class="navbar-menu">
         <div class="navbar-end">
           <% if user_signed_in? %>
@@ -64,8 +63,7 @@
             <div class="field is-grouped">
               <%= link_to 'New Discussion', new_discussion_path, class:"button is-info" %>
             </div>
-
-
+          </div>
           <div class="navbar-item has-dropdown is-hoverable">
             <%= link_to 'Account', edit_user_registration_path, class: "navbar-link" %>
             <div class="navbar-dropdown is-right">
@@ -96,15 +94,18 @@
     </div>
   </nav>
 
-
 <section class="section">
   <div class="container">
     <%= yield %>
     <%= render 'layouts/application/private_conversations_windows' %>
     <%= render 'layouts/application/group_conversations_windows' %>
+
   </div>
 </section>
 
-
   </body>
 </html>
+          
+      
+
+    
