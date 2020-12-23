@@ -1,7 +1,7 @@
 class Private::ConversationsController < ApplicationController
   
   def create
-    recipient_id = Post.find(params[:post_id]).user.id
+    recipient_id = Discussion.find(params[:discussion_id]).user.id
     @conversation = Private::Conversation.new(sender_id: current_user.id, 
                                              recipient_id: recipient_id)
     if @conversation.save

@@ -41,7 +41,7 @@ class ApplicationController < ActionController::Base
       cookies[:user_id] = current_user.id if current_user.present?
       cookies[:group_conversations] = current_user.group_conversations.ids
     else
-      gon.group_conversations = []
+      # gon.group_conversations = []
     end
   end
 
