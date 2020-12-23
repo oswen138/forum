@@ -35,7 +35,6 @@ localhost:3000
 Nothing loads until you fix this and several other errors
 
 ![ScreenShot](app\assets\images\Capture.JPG)
-![alt text](app\assets\images\Capture.JPG)
 
 ## **Support/Contact** 
 Contact ophelia.swen@gmail.com
