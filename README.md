@@ -34,6 +34,7 @@ localhost:3000
 ## **Known Bugs** 
 Nothing loads until you fix this and several other errors
 
+![ScreenShot](app\assets\images\Capture.JPG)
 ![alt text](app\assets\images\Capture.JPG)
 
 ## **Support/Contact** 
