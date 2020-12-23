@@ -74,3 +74,5 @@ https://web-crunch.com/posts/lets-build-with-ruby-on-rails-trade-app-in-app-mess
 
 
 https://themewagon.com/
+
+https://www.youtube.com/watch?v=Xf9w2FHnB9g

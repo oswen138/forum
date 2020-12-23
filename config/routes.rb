@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
   root 'discussions#index'
+  get 'home/board'
+
   devise_for :users, controllers: { registrations: 'registrations' }
 
   resources :channels

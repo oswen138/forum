@@ -26,6 +26,11 @@
         <%= link_to root_path, class:"navbar-item" do %>
           <h1 class="title is-5">Discussions</h1>
         <% end  %>
+
+        <%= link_to home_board_path, class:"navbar-item" do %>
+          <h1 class="title is-5">Image Board</h1>
+        <% end  %>
+
         
       <div class="navbar-burger burger" data-target="navbar">
         <span></span>
@@ -73,10 +78,10 @@
     </div>
   </nav>
 
+
 <section class="section">
   <div class="container">
     <%= yield %>
-    <%= render 'layouts/application/private_conversations_windows' %>
   </div>
 </section>
 
