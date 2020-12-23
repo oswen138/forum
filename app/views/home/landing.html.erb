@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snackster</title>
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.jsdelivr.net/npm/circular-revealer@0.0.8/dist/index.iife.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="js/scripts.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></script>
+  <script> 
+    $(function(){
+      $("#includedContent").load("i.html"); 
+    });
+    </script> 
+</head>
+
+
+<!-- navbar -->
+<header>
+  <a href="#" class="logo">
+    <img src="photos/mandela.svg"/>
+  </a>
+  <div>
+      <button class="header__button nav-btn-js" type="button"></button>
+      <nav class="header__nav nav-js" data-active="false">
+          <a href="#" class="logo logo--white">
+            <img src="photos/mandela.svg"/>
+          </a>
+          <ul class="header__menu">
+              <li class="header__menu-item"><a href="/pages/signin.html">Register/Sign In</a></li>  
+              <li class="header__menu-item"><a href="#">Forum</a></li>
+              <li class="header__menu-item"><a href="#">Journal</a></li>
+              <li class="header__menu-item"><a href="#">Board</a></li>
+              <li class="header__menu-item"><a href="#">About</a></li>
+          </ul>
+      </nav>
+  </div>
+</header>
+
+
+
+
+<body>
+
+<div class="split left">
+  <div class="centered">
+    <h2>NO text</h2>
+    <p>Some text.</p>
+  </div>
+</div>
+
+<div class="image">
+    <img src="images/cup 1.JPG" id="img1"/>
+</div>
+
+<div class="split right">
+  <div class="centered">
+    <h2>Tea + Snacks</h2>
+    <p>"Tea philosophy is cheese and pretzels"</p>
+  </div>
+</div>
+
+
+
+</body>
+</html>

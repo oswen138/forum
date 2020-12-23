@@ -23,6 +23,7 @@
     <% end %>
      <nav class="navbar is-light" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
+
         <%= link_to root_path, class:"navbar-item" do %>
           <h1 class="title is-5">Discussions</h1>
         <% end  %>
@@ -35,7 +36,11 @@
           <h1 class="title is-5">Conversations</h1>
         <% end  %>
 
-        
+        <%= link_to home_landing_path, class:"navbar-item" do %>
+          <h1 class="title is-5">Landing Page</h1>
+        <% end  %>
+
+
         <form action="" class="search-bar">
         <input type="search" name="search" pattern=".*\S.*" required>
         <button class="search-btn" type="submit">

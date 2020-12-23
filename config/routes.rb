@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'discussions#index'
   get 'home/board'
   get 'home/messages'
+  get 'home/landing'
 
   devise_for :users, controllers: { registrations: 'registrations' }
 

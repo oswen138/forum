@@ -6,8 +6,7 @@ class HomeController < ApplicationController
   end
 
   def messages
-    private
-    redirect_to messages_controller_path
+    redirect_to discussion_private_messages_path
   end
 end
 
