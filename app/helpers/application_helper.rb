@@ -1,6 +1,11 @@
 module ApplicationHelper
   require 'redcarpet/render_strip'
+  include NavigationHelper
+  include PostsHelper
   include Private::ConversationsHelper
+  include Private::MessagesHelper 
+  include Group::ConversationsHelper
+  include Group::MessagesHelper
 
   def has_role?(role)
     current_user && current_user.has_role?(role)
@@ -40,4 +45,12 @@ module ApplicationHelper
     Kramdown::Document.new(text, input: "GFM").to_html
   end
 
+  def private_conversations_windows
+    params[:controller] != 'messengers' ? @private_conversations_windows : []
+  end
+
+  def group_conversations_windows
+    params[:controller] != 'messengers' ? @group_conversations_windows : []
+  end
 end
+
