@@ -19,6 +19,7 @@ gem 'webpacker', '~> 4.0'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
+gem 'gon'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -38,6 +39,8 @@ gem 'friendly_id', '~> 5.4.0'
 gem 'redcarpet', '~> 3.5', '>= 3.5.1'
 gem 'coderay', '~> 1.1', '>= 1.1.3'
 gem 'devise', '~> 4.7', '>= 4.7.3'
+
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

@@ -1,7 +1,6 @@
 module ApplicationHelper
   require 'redcarpet/render_strip'
   include NavigationHelper
-  include PostsHelper
   include Private::ConversationsHelper
   include Private::MessagesHelper 
   include Group::ConversationsHelper

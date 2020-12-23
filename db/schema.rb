@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_22_051630) do
+ActiveRecord::Schema.define(version: 2020_12_20_002825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,16 @@ ActiveRecord::Schema.define(version: 2020_12_22_051630) do
     t.string "slug"
   end
 
+  create_table "contacts", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "contact_id"
+    t.boolean "accepted", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contact_id"], name: "index_contacts_on_contact_id"
+    t.index ["user_id"], name: "index_contacts_on_user_id"
+  end
+
   create_table "discussions", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -65,12 +75,36 @@ ActiveRecord::Schema.define(version: 2020_12_22_051630) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
+  create_table "group_conversations", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "group_conversations_users", id: false, force: :cascade do |t|
+    t.integer "conversation_id"
+    t.integer "user_id"
+    t.index ["conversation_id"], name: "index_group_conversations_users_on_conversation_id"
+    t.index ["user_id"], name: "index_group_conversations_users_on_user_id"
+  end
+
+  create_table "group_messages", force: :cascade do |t|
+    t.string "content"
+    t.string "added_new_users"
+    t.string "seen_by"
+    t.bigint "user_id"
+    t.bigint "conversation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_group_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_group_messages_on_user_id"
+  end
 
   create_table "private_conversations", force: :cascade do |t|
     t.integer "recipient_id"
     t.integer "sender_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["recipient_id", "sender_id"], name: "index_private_conversations_on_recipient_id_and_sender_id", unique: true
     t.index ["recipient_id"], name: "index_private_conversations_on_recipient_id"
     t.index ["sender_id"], name: "index_private_conversations_on_sender_id"
@@ -78,13 +112,11 @@ ActiveRecord::Schema.define(version: 2020_12_22_051630) do
 
   create_table "private_messages", force: :cascade do |t|
     t.text "body"
-    t.bigint "user_id"
     t.bigint "conversation_id"
     t.boolean "seen", default: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["conversation_id"], name: "index_private_messages_on_conversation_id"
-    t.index ["user_id"], name: "index_private_messages_on_user_id"
   end
 
   create_table "replies", force: :cascade do |t|
@@ -100,9 +132,10 @@ ActiveRecord::Schema.define(version: 2020_12_22_051630) do
     t.string "name"
     t.string "resource_type"
     t.bigint "resource_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
+    t.index ["name"], name: "index_roles_on_name"
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
   end
 
@@ -112,14 +145,14 @@ ActiveRecord::Schema.define(version: 2020_12_22_051630) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "username"
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -133,5 +166,4 @@ ActiveRecord::Schema.define(version: 2020_12_22_051630) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "private_messages", "users"
 end
