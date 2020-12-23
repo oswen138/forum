@@ -27,7 +27,7 @@ textarea {
 }
 
 .conversation-heading, .conversation-heading-full, .new_chat_window {
-  background-color: $navbarColor !important;
+  background-color: peachpuff !important;
   color: white !important;
   height: 40px;
   border: none !important;
@@ -67,7 +67,7 @@ textarea {
   &:hover {
     border: none;
     background-color: white;
-    color: $navbarColor !important;
+    color: peachpuff !important;
   }
   &:visited, &:focus {
     color: white;
@@ -122,7 +122,7 @@ textarea {
 }
 
 .message-received {
-  background-color: $backgroundColor;
+  background-color: peachpuff;
   border-color: #EEEEEE;
   border-radius: 5px;
   margin: 5px 50px 5px 5px;
@@ -265,9 +265,9 @@ textarea {
 
 .select-users-button {
   width: 40%;
-  background-color: $navbarColor;
+  background-color: peachpuff;
   color: white;
-  border: 1px solid $navbarColor;
+  border: 1px solid peachpuff;
 }
 
 .group-message {

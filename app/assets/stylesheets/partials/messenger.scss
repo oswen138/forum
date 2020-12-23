@@ -15,7 +15,7 @@
       height: 50px;
       line-height: 50px;
       vertical-align: middle;
-      color: $navbarColor;
+      color: peachpuff;
     }
     .back-to-chats-main {
       position: absolute;
@@ -57,10 +57,10 @@
   }
   .col-sm-2 {
     padding: 0;
-    background-color: $navbarColor;
+    background-color: peachpuff;
     ul {
       padding: 20px 0 0 0;
-      background-color: $navbarColor;
+      background-color: peachpuff;
       li a {
         color: white;
         display: inline-block;
@@ -73,7 +73,7 @@
         }
       }
     }
-    border-right: 1px solid $navbarColor;
+    border-right: 1px solid peachpuff;
   }
   .messages-list {
     min-height: 100%;
