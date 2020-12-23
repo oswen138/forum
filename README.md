@@ -34,7 +34,7 @@ localhost:3000
 ## **Known Bugs** 
 Nothing loads until you fix this and several other errors
 
-![alt text](app\assets\images\Capture.JPG)
+![ScreenShot](app\assets\images\Capture.JPG)
 
 ## **Support/Contact** 
 Contact ophelia.swen@gmail.com
