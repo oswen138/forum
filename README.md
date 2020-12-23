@@ -32,7 +32,9 @@ rails s
 localhost:3000
 ```
 ## **Known Bugs** 
-Slow to load, may not render photos
+Nothing loads until you fix this and several other errors
+
+![alt text](app\assets\images\Capture.JPG)
 
 ## **Support/Contact** 
 Contact ophelia.swen@gmail.com
@@ -43,3 +45,4 @@ Contact ophelia.swen@gmail.com
 - Javascript/JQuery
 - PostgreSQL
 - Ruby on Rails
+
