@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   def all_ordered_conversations 
     if user_signed_in?
-      @all_conversations = OrderConversationsService.new({user: current_user}).call
+      @all_conversations = nil
     end
   end
 
@@ -32,17 +32,17 @@ class ApplicationController < ActionController::Base
     redirect_to root_path if user_signed_in?
   end
 
-  private
+  # private
 
-  def set_user_data
-    if user_signed_in?
-      gon.group_conversations = current_user.group_conversations.ids
-      gon.user_id = current_user.id
-      cookies[:user_id] = current_user.id if current_user.present?
-      cookies[:group_conversations] = current_user.group_conversations.ids
-    else
-      # gon.group_conversations = []
-    end
-  end
+  # def set_user_data
+  #   if user_signed_in?
+  #     gon.group_conversations = current_user.group_conversations.ids
+  #     gon.user_id = current_user.id
+  #     cookies[:user_id] = current_user.id if current_user.present?
+  #     cookies[:group_conversations] = current_user.group_conversations.ids
+  #   else
+  #     # gon.group_conversations = []
+  #   end
+  # end
 
 end
