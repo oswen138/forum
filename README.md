@@ -1,78 +1,45 @@
-# README
+# Snackster
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## **Description**
+Epicodus capstone project. This application is a simple interface that provides an online forum space and a photo log of a user's favorite snacks and teas.
 
-Things you may want to cover:
+## **MVP**
 
-* Ruby version
+| Status [x] = done| User Action | 
+| --- | --- |
+| [x] | User can sign up, log in, and sign out |
+| [x] | User has full CRUD functionality of discussions feature |
+| 3 | User has full CRUD functionality of messages feature |
+| [x] | User has can view photos |
+| 5 | User has can upload own photo |
 
-* System dependencies
+## **Setup Instructions** 
+To view project
+Checkout host link on heroku: 
 
-* Configuration
+To edit project files
+```
+git install rails -v5.2.0
+git clone https://github.com/oswen138/forum.git
+cd rails_snackster
+gem install bundler
+bundle install
+rake db:setup (setting up database)
+```
+To view in browser of choice
+```
+rails s
+localhost:3000
+```
+## **Known Bugs** 
+Slow to load, may not render photos
 
-* Database creation
+## **Support/Contact** 
+Contact ophelia.swen@gmail.com
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-12/17/20 - 12/18/20
-1PM - reference on how to build a discussion forum
-https://web-crunch.com/posts/lets-build-with-ruby-on-rails-discussion-forum
-
-
-Forum (discussions)
-
-Forum posts have:
-1. A channel (category)
-2. Markdown support
-3. Date published
-4. Code formatting
-5. Comment count
-6. Comments
-  -Comment author
-  -Comment voting
-  -Markdown support
-
-Forum Has
-1. Filters (nice to have)
-  -All
-  -Popular this week
-  -Popular all time
-  -No replies yet
-2. Channels
-
-Guest users can
--Read forum posts
-
-Admin users can
--Create Channels
--Delete forum discussions
-
-Logged in Users can
--Have a profile
--Search the forum
--Comments/contribute to the forum discussions
-
-
-12/18/20
-8AM - finish tutorial parts 5 to 9
-12PM - Lunch
-1PM - research tutorials on how to build a messaging system with ruby on rails
-2PM - attempt on different file to understand how each part was implemented
-found one mixed with a trade app
-Reference:
-https://web-crunch.com/posts/lets-build-with-ruby-on-rails-trade-app-in-app-messaging
-3PM - implement code onto current application
-
-
-https://themewagon.com/
-
-https://www.youtube.com/watch?v=Xf9w2FHnB9g
+## **Technologies Used** 
+- HTML
+- CSS
+- Javascript/JQuery
+- PostgreSQL
+- Ruby on Rails
