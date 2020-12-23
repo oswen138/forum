@@ -31,7 +31,14 @@
           <h1 class="title is-5">Image Board</h1>
         <% end  %>
 
-        
+        <form action="" class="search-bar">
+        <input type="search" name="search" pattern=".*\S.*" required>
+        <button class="search-btn" type="submit">
+          <span>Search</span>
+        </button>
+      </form>
+
+
       <div class="navbar-burger burger" data-target="navbar">
         <span></span>
         <span></span>
@@ -47,6 +54,7 @@
             <div class="field is-grouped">
               <%= link_to 'New Discussion', new_discussion_path, class:"button is-info" %>
             </div>
+
 
           <div class="navbar-item has-dropdown is-hoverable">
             <%= link_to 'Account', edit_user_registration_path, class: "navbar-link" %>
