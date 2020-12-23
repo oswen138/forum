@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   def all_ordered_conversations 
     if user_signed_in?
-      @all_conversations = nil
+      @all_conversations = []
     end
   end
 
